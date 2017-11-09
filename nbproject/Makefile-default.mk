@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=GLCDroutinesEasyPic.c GLCD_Test.c
+SOURCEFILES_QUOTED_IF_SPACED=GLCDroutinesEasyPic.c GLCD_Test.c stuff.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o.d ${OBJECTDIR}/GLCD_Test.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o ${OBJECTDIR}/stuff.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o.d ${OBJECTDIR}/GLCD_Test.o.d ${OBJECTDIR}/stuff.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o
+OBJECTFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o ${OBJECTDIR}/stuff.o
 
 # Source Files
-SOURCEFILES=GLCDroutinesEasyPic.c GLCD_Test.c
+SOURCEFILES=GLCDroutinesEasyPic.c GLCD_Test.c stuff.c
 
 
 CFLAGS=
@@ -117,6 +117,14 @@ ${OBJECTDIR}/GLCD_Test.o: GLCD_Test.c  nbproject/Makefile-${CND_CONF}.mk
 	@${DEP_GEN} -d ${OBJECTDIR}/GLCD_Test.o 
 	@${FIXDEPS} "${OBJECTDIR}/GLCD_Test.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
+${OBJECTDIR}/stuff.o: stuff.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/stuff.o.d 
+	@${RM} ${OBJECTDIR}/stuff.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/stuff.o   stuff.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/stuff.o 
+	@${FIXDEPS} "${OBJECTDIR}/stuff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
 else
 ${OBJECTDIR}/GLCDroutinesEasyPic.o: GLCDroutinesEasyPic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -133,6 +141,14 @@ ${OBJECTDIR}/GLCD_Test.o: GLCD_Test.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/GLCD_Test.o   GLCD_Test.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/GLCD_Test.o 
 	@${FIXDEPS} "${OBJECTDIR}/GLCD_Test.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/stuff.o: stuff.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/stuff.o.d 
+	@${RM} ${OBJECTDIR}/stuff.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/stuff.o   stuff.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/stuff.o 
+	@${FIXDEPS} "${OBJECTDIR}/stuff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 

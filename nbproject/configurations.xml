@@ -21,6 +21,7 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>stuff.c</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
