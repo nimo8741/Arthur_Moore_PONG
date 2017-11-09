@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=PONG_project.X
+PROJECTNAME=Arthur_Moore_PONG
 
 # Active Configuration
 DEFAULTCONF=default
