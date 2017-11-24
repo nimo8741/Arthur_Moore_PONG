@@ -101,9 +101,18 @@ void Initial() {
     for(i=0;i<128;i++){
         for(j=0;j<8;j++){
             SetCursor(i, j);
-            WriteData(0x08);
+            if (j == 0){
+                WriteData(0xAF);   // use to be 0x08
+            }
+            else{
+                WriteData(0x00);
+            }
         }
     }
+    //i = 50;
+    //j = 4;
+    //SetCursor(i,j);
+    //WriteData(0x10);
 //    DisplayHexArray(H,sizeof(H));
 
     // Initializing TMR0

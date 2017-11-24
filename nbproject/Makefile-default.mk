@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=GLCDroutinesEasyPic.c GLCD_Test.c stuff.c
+SOURCEFILES_QUOTED_IF_SPACED=GLCDroutinesEasyPic.c main.c Pong_funcs.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o ${OBJECTDIR}/stuff.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o.d ${OBJECTDIR}/GLCD_Test.o.d ${OBJECTDIR}/stuff.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Pong_funcs.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Pong_funcs.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/GLCD_Test.o ${OBJECTDIR}/stuff.o
+OBJECTFILES=${OBJECTDIR}/GLCDroutinesEasyPic.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Pong_funcs.o
 
 # Source Files
-SOURCEFILES=GLCDroutinesEasyPic.c GLCD_Test.c stuff.c
+SOURCEFILES=GLCDroutinesEasyPic.c main.c Pong_funcs.c
 
 
 CFLAGS=
@@ -105,25 +105,25 @@ ${OBJECTDIR}/GLCDroutinesEasyPic.o: GLCDroutinesEasyPic.c  nbproject/Makefile-${
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/GLCDroutinesEasyPic.o.d 
 	@${RM} ${OBJECTDIR}/GLCDroutinesEasyPic.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/GLCDroutinesEasyPic.o   GLCDroutinesEasyPic.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/GLCDroutinesEasyPic.o   GLCDroutinesEasyPic.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/GLCDroutinesEasyPic.o 
 	@${FIXDEPS} "${OBJECTDIR}/GLCDroutinesEasyPic.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
-${OBJECTDIR}/GLCD_Test.o: GLCD_Test.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GLCD_Test.o.d 
-	@${RM} ${OBJECTDIR}/GLCD_Test.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/GLCD_Test.o   GLCD_Test.c 
-	@${DEP_GEN} -d ${OBJECTDIR}/GLCD_Test.o 
-	@${FIXDEPS} "${OBJECTDIR}/GLCD_Test.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/main.o   main.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
-${OBJECTDIR}/stuff.o: stuff.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Pong_funcs.o: Pong_funcs.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/stuff.o.d 
-	@${RM} ${OBJECTDIR}/stuff.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/stuff.o   stuff.c 
-	@${DEP_GEN} -d ${OBJECTDIR}/stuff.o 
-	@${FIXDEPS} "${OBJECTDIR}/stuff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	@${RM} ${OBJECTDIR}/Pong_funcs.o.d 
+	@${RM} ${OBJECTDIR}/Pong_funcs.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/Pong_funcs.o   Pong_funcs.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/Pong_funcs.o 
+	@${FIXDEPS} "${OBJECTDIR}/Pong_funcs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 else
 ${OBJECTDIR}/GLCDroutinesEasyPic.o: GLCDroutinesEasyPic.c  nbproject/Makefile-${CND_CONF}.mk
@@ -134,21 +134,21 @@ ${OBJECTDIR}/GLCDroutinesEasyPic.o: GLCDroutinesEasyPic.c  nbproject/Makefile-${
 	@${DEP_GEN} -d ${OBJECTDIR}/GLCDroutinesEasyPic.o 
 	@${FIXDEPS} "${OBJECTDIR}/GLCDroutinesEasyPic.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
-${OBJECTDIR}/GLCD_Test.o: GLCD_Test.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/GLCD_Test.o.d 
-	@${RM} ${OBJECTDIR}/GLCD_Test.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/GLCD_Test.o   GLCD_Test.c 
-	@${DEP_GEN} -d ${OBJECTDIR}/GLCD_Test.o 
-	@${FIXDEPS} "${OBJECTDIR}/GLCD_Test.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/main.o   main.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
-${OBJECTDIR}/stuff.o: stuff.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Pong_funcs.o: Pong_funcs.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/stuff.o.d 
-	@${RM} ${OBJECTDIR}/stuff.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/stuff.o   stuff.c 
-	@${DEP_GEN} -d ${OBJECTDIR}/stuff.o 
-	@${FIXDEPS} "${OBJECTDIR}/stuff.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	@${RM} ${OBJECTDIR}/Pong_funcs.o.d 
+	@${RM} ${OBJECTDIR}/Pong_funcs.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -ms -oa-  -I ${MP_CC_DIR}\\..\\h  -fo ${OBJECTDIR}/Pong_funcs.o   Pong_funcs.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/Pong_funcs.o 
+	@${FIXDEPS} "${OBJECTDIR}/Pong_funcs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 
@@ -157,7 +157,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/PONG_project.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w -x -u_DEBUG -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/PONG_project.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION_LD)  -w -x -u_DEBUG -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"  -z__MPLAB_BUILD=1  -u_CRUNTIME -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -l ${MP_CC_DIR}\\..\\lib  -o dist/${CND_CONF}/${IMAGE_TYPE}/PONG_project.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}   
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/PONG_project.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 

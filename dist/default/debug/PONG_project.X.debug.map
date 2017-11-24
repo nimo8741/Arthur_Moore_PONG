@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Thu Nov 23 23:53:09 2017
+Linker Map File - Created Thu Nov 23 23:54:49 2017
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -62,7 +62,7 @@ Linker Map File - Created Thu Nov 23 23:53:09 2017
                 SEED_DATA      idata   0x00006a       data   0x000002
            .udata_errno.o      udata   0x00006c       data   0x000002
 .idata_GLCDroutinesEasyPic.o      idata   0x00006e       data   0x000002
-                   .stack      udata   0x000e00       data   0x000100
+                   .stack      udata   0x000d00       data   0x000100
       .udata_Pong_funcs.o      udata   0x000f00       data   0x00000d
       .idata_Pong_funcs.o      idata   0x000f0d       data   0x000008
            .idata_c018i.o      idata   0x000f15       data   0x000000
