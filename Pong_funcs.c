@@ -577,7 +577,134 @@ void begin_game(void){
     
     ///////////////////////////////////////////////////////////////////
     // Now print the I
+    i = i + 17;
     
+    SetCursor(i,3);
+    WriteData(0xFF);
+    SetCursor(i,4);
+    WriteData(0xFF);
+    
+    SetCursor(i-1,3);
+    WriteData(0xFF);
+    SetCursor(i-1,4);
+    WriteData(0xFF);
+    
+    SetCursor(i-2,3);
+    WriteData(0x03);
+    SetCursor(i-3,3);
+    WriteData(0x03);
+    
+    SetCursor(i+1,3);
+    WriteData(0x03);
+    SetCursor(i+2,3);
+    WriteData(0x03);
+    
+    
+    SetCursor(i-2,4);
+    WriteData(0xC0);
+    SetCursor(i-3,4);
+    WriteData(0xC0);
+    
+    SetCursor(i+1,4);
+    WriteData(0xC0);
+    SetCursor(i+2,4);
+    WriteData(0xC0);
+
+    
+    ///////////////////////////////////////////////////////////////////
+    // Now print the N
+    
+    i = i + 8;
+    
+    SetCursor(i,3);
+    WriteData(0xFF);
+    SetCursor(i,4);
+    WriteData(0xFF);
+    SetCursor(i-1,3);
+    WriteData(0xFF);
+    SetCursor(i-1,4);
+    WriteData(0xFF);
+    
+    k = 1;
+    p = 1;
+    q = 1;
+    for (j = i+1 ; j <= i+1+8; j ++){
+    
+        SetCursor(i+k,3);
+        WriteData(p+2*p);
+        SetCursor(i+1+k,3);
+        WriteData(p+2*p);
+        
+        q++;
+        if (q%2 == 0){
+            k++;
+        }
+        p = p*2;
+    }
+   
+    
+    p = 1;
+    q = 1;
+    k --;
+    for (j = i ; j <= i+1+8; j ++){
+    
+        SetCursor(i+k,4);
+        WriteData(p + 2*p);
+        SetCursor(i+1+k,4);
+        WriteData(p+2*p);
+        
+        q++;
+        if (q%2 == 0){
+            k++;
+        }
+        p = p*2;
+    }
+    
+    k--;
+    SetCursor(i+k,3);
+    WriteData(0xFF);
+    SetCursor(i+k,4);
+    WriteData(0xFF);
+    SetCursor(i+k+1,3);
+    WriteData(0xFF);
+    SetCursor(i+k+1,4);
+    WriteData(0xFF);
+    
+    ///////////////////////////////////////////////////////////////////
+    // Finally, question mark...
+    i = i + 15;
+    SetCursor(i,3);
+    WriteData(0x04);
+    SetCursor(i+1,3);
+    WriteData(0x02);
+    
+ 
+    for (j = 2; j <=6; j++){
+        SetCursor(i+j,3);
+        WriteData(0x03);
+    }
+    
+    SetCursor(i+j,3);
+    WriteData(0x06);
+    SetCursor(i+j+1,3);
+    WriteData(0x0C);
+    SetCursor(i+j+2,3);
+    WriteData(0xF8);
+    
+    SetCursor(i+j+2,4);
+    WriteData(0x01);
+    SetCursor(i+j,4);
+    WriteData(0x01);
+    SetCursor(i+j+1,4);
+    WriteData(0x03);
+    SetCursor(i+j,4);
+    WriteData(0x06);
+    SetCursor(i+j-1,4);
+    WriteData(0x0C);
+    SetCursor(i+j-2,4);
+    WriteData(0xB8);
+    SetCursor(i+j-3,4);
+    WriteData(0xB8);
     
     
 }
