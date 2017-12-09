@@ -10,6 +10,7 @@
 #include <p18f87k22.h>
 #include "GLCDroutinesEasyPic.h"
 #include "Pong_funcs.h"
+#include <delays.h>
 
 
 #pragma config FOSC=HS1, PWRTEN=ON, BOREN=ON, BORV=2, PLLCFG=OFF
@@ -43,6 +44,7 @@ void main() {
      while(1){   // this is the loop for the game
          update_paddles();
          update_ball();
+         score_board();
          // check for reset request down here
          
      }
@@ -58,11 +60,17 @@ void main() {
  * interrupts for both.
  ******************************************************************************/
 void Initial() {
+    
+    unsigned char i;
+    unsigned char j;
+    unsigned char k;
+    
     // Configure the IO ports
     TRISC  = 0b00000100;
     LATC = 0x00;
     TRISE = 0x00;
     LATE = 0x00;
+    TRISEbits.TRISE3 = 1;    // start button 
     TRISEbits.TRISE4 = 1;    // make the "up" button for player 1 set to input
     TRISEbits.TRISE5 = 1;    // make the "down" button for player 1 set to input 
     TRISJbits.TRISJ0 = 1;    // make the "up" button for player 2 set to input
@@ -136,7 +144,20 @@ void Initial() {
     
     PIE5bits.TMR7IE = 0;   // make sure there are no interrupts associated with timer7
     T7CONbits.TMR7ON = 1;   // turn on timer7.  This will be used for generating the random number
+    
     begin_game();            // this asks the begin game question and generates the random number
+    //end_game();
+    while (~ PORTEbits.RE3) {
+        // wait until player presses start
+    }
+    
+    // clear board
+    for (j = 3 ; j <= 4 ; j++){
+        for (i = 25 ; i <= 127-25  ; i++){
+            SetCursor(i,j);
+            WriteData(0x00);
+        }
+    }
 }
 
 
@@ -179,6 +200,9 @@ void LoPriISR() {
         break;
     }
 }
+
+
+
 
 
 

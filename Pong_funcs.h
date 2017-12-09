@@ -48,7 +48,11 @@ void clear_paddle(unsigned char player);
 
 void total_paddle_clear(void);
 
+void score_board(void);
+
 void begin_game(void);
+
+void end_game(void);
 
 void TMR0handler(void);
 #endif	/* PONG_FUNCS_H */
