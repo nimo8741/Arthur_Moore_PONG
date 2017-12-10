@@ -11,6 +11,7 @@
 #include "GLCDroutinesEasyPic.h"
 #include "Pong_funcs.h"
 #include <delays.h>
+#include "adc.h"
 
 
 #pragma config FOSC=HS1, PWRTEN=ON, BOREN=ON, BORV=2, PLLCFG=OFF
@@ -41,10 +42,15 @@ void atLowVector(void)
 
 void main() {
      Initial();                 // Initialize everything
+     
      while(1){   // this is the loop for the game
+         check_reset();
+         check_reset();
          update_paddles();
          update_ball();
-         score_board();
+         
+         
+         //ADCTemperature();
          // check for reset request down here
          
      }
@@ -64,7 +70,7 @@ void Initial() {
     unsigned char i;
     unsigned char j;
     unsigned char k;
-    
+   
     // Configure the IO ports
     TRISC  = 0b00000100;
     LATC = 0x00;
@@ -94,11 +100,6 @@ void Initial() {
     
     // interrupt stuff
     RCONbits.IPEN = 1;              // Enable priority levels
-    
-    
-    // add in timer for the beginning of the game here
-
-    
     
     // Now set up Timer1, This will be the delay timer in between ball position updates
     PIR1bits.TMR1IF = 0;   // clear the interrupt flag just to be sure
@@ -136,28 +137,18 @@ void Initial() {
     
     // set up timer0
     T0CON = 0b00000101;     // this sets the timer with a prescalar of 64
-    INTCONbits.TMR0IE = 1;   // enable interrupts for timer0
+    //INTCONbits.TMR0IE = 1;   // enable interrupts for timer0
     INTCONbits.TMR0IF = 0;   // make sure the interrupt flag is cleared
     INTCON2bits.TMR0IP = 0;   // assign low priority to timer0
-    TMR0H = 0x0B;
-    TMR0L = 0xDC;    // load the values in to the register to make this take 1 second
+    
     
     PIE5bits.TMR7IE = 0;   // make sure there are no interrupts associated with timer7
     T7CONbits.TMR7ON = 1;   // turn on timer7.  This will be used for generating the random number
     
-    begin_game();            // this asks the begin game question and generates the random number
-    //end_game();
-    while (~ PORTEbits.RE3) {
-        // wait until player presses start
-    }
+    Initial_screen();
+    Initial_ball();
     
-    // clear board
-    for (j = 3 ; j <= 4 ; j++){
-        for (i = 25 ; i <= 127-25  ; i++){
-            SetCursor(i,j);
-            WriteData(0x00);
-        }
-    }
+    
 }
 
 

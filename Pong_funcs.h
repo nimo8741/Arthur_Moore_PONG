@@ -24,7 +24,11 @@ struct ball_struct {
  *     Description:		This function initializes the x and y pos
  *
  ******************************************************************************/
+void Initial_screen(void);
+
 void Initial_ball(void);
+
+void check_reset(void);
 
 // ADD FUNCTION DESCRIPTION HERE
 void update_ball(void);
@@ -53,6 +57,7 @@ void score_board(void);
 void begin_game(void);
 
 void end_game(void);
+
 
 void TMR0handler(void);
 #endif	/* PONG_FUNCS_H */

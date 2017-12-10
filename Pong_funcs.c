@@ -6,6 +6,7 @@
 #include <stdlib.h>  // these last two are so that we can make random numbers
 #include <math.h>
 #include <p18f87k22.h>
+#include "adc.h"
 
 #define deg_to_rad 0.01745
 #define max_y 62
@@ -30,25 +31,64 @@ unsigned char paddle2min = paddle_min;
 unsigned char paddle2max = paddle_max;   // Keep in mind these are not constants, just the starting positions
 unsigned char paddle1 = 0;   // this means that player 1 has pressed neither button 
 unsigned char paddle2 = 0;   // this means that player 2 has pressed neither button
+float ADCResult;
+unsigned char game;
 
+
+void Initial_screen(){
+    
+    unsigned char j;
+    unsigned char i;
+    
+    game = 0;
+    begin_game();            // this asks the begin game question and generates the random number
+    //end_game();
+    TMR0H = 0xFF;
+    TMR0L = 0xFE;    // load the values in to the register to make this take 1 second
+    T0CONbits.TMR0ON = 1; // turn timer0 on
+    while (~ PORTEbits.RE3) {
+        if (INTCONbits.TMR0IF){ // if the timer has rolled over
+            TMR0H = 0xFF;       // load numbers for 1 second
+            TMR0L = 0x00;
+            INTCONbits.TMR0IF = 0;      //Clear flag
+        }
+        
+        // wait until player presses start
+    }
+    
+    // clear board
+    for (j = 3 ; j <= 4 ; j++){
+        for (i = 25 ; i <= 127-25  ; i++){
+            SetCursor(i,j);
+            WriteData(0x00);
+        }
+    }
+                      }
 
 void Initial_ball() {
-    char rand1, rand2;
-    float angle, delta;
-    rand1 = rand() % 2;
-    rand2 = rand() % 2;
+    char delta;
+    unsigned char rand1, rand2;
+    float angle;
+    
+    //ADCResult = 0;
+    //ADCTemperature();
+    
+    //rand1 = rand() % 2;
+    //rand2 = rand() % 2;
+    rand2 = TMR0L % 2;
+    rand1 = TMR0L % 3;
+    delta = TMR0L/5;
     if (rand1)
         angle = 180;
     else
         angle = 0;
-    delta = rand() % 50;
     if (rand2)
         delta *= -1;
     angle = angle + delta;
     ball.x_pos = 64;
     ball.y_pos = 32;
     ball.theta = angle;
-    //ball.theta = 0;   // remove this later, for debugging only
+    //ball.theta = 0;
     ball.done_waiting = 0;    // this means that the ball is not done waiting
     
     // now reset the position of the paddles
@@ -65,12 +105,20 @@ void Initial_ball() {
 void update_ball(void){
     unsigned char pixels;
     unsigned char hit_paddle;
+    unsigned char temp;
+    game = 1;
+
     // first clear the old pixel
     if (ball.done_waiting){
         unsigned char cur_x, cur_y;
 
         cur_x = (unsigned char) ball.x_pos;
         cur_y = (unsigned char) ball.y_pos;
+        
+        if (cur_y == 11 || cur_y == 10){
+            temp = 1;
+            score_board();
+        }
         
         // Delete the pixels from last time
         if ( cur_x == min_x && cur_y >= paddle1min && cur_y <= paddle1max){ // this hit player 1's paddle
@@ -145,10 +193,38 @@ void update_ball(void){
         }
         else if ( hit_paddle == 1){ // this hit player 1's paddle
             paddle_reflect(1,cur_y - paddle1min);
+            // we need to get the ball out of the way before we updates the paddle
+            // otherwise the second row of pixels might disappear
+            ball.x_pos += scale * cos(ball.theta * deg_to_rad);
+            ball.y_pos += scale * sin(ball.theta * deg_to_rad);
+            if (ball.x_pos > max_x)
+                ball.x_pos = max_x;
+            if (ball.y_pos > 62)
+                ball.y_pos = 62;
+            if (ball.x_pos < 1)
+                ball.x_pos = 1;
+            if (ball.y_pos < 1)
+                ball.y_pos = 1;
+            cur_x = (unsigned char) ball.x_pos;
+            cur_y = (unsigned char) ball.y_pos;
             print_paddle(1);
         }
         else if (hit_paddle == 2){  // this hit player 2's paddle
             paddle_reflect(2,cur_y - paddle2min);
+            // we need to get the ball out of the way before we updates the paddle
+            // otherwise the second row of pixels might disappear
+            ball.x_pos += scale * cos(ball.theta * deg_to_rad);
+            ball.y_pos += scale * sin(ball.theta * deg_to_rad);
+            if (ball.x_pos > max_x)
+                ball.x_pos = max_x;
+            if (ball.y_pos > 62)
+                ball.y_pos = 62;
+            if (ball.x_pos < 1)
+                ball.x_pos = 1;
+            if (ball.y_pos < 1)
+                ball.y_pos = 1;
+            cur_x = (unsigned char) ball.x_pos;
+            cur_y = (unsigned char) ball.y_pos;
             print_paddle(2);
    
         }
@@ -226,6 +302,9 @@ void update_ball(void){
             SetCursor(cur_x + 1, cur_y / 8);
             WriteData(pixels);
         }
+        
+        
+        
         ball.done_waiting = 0;   // the ball now needs to go through another waiting cycle
     }
 }
@@ -238,10 +317,8 @@ void goal_scored(unsigned char player){
     
     total_paddle_clear();
     
-    // check to see if the game has been won
-     end_game();
-    
     // now reset the ball 
+    score_board();
     Initial_ball();
 }
 
@@ -272,11 +349,13 @@ void update_paddles(void) {
         if (PORTEbits.RE4 && !PORTEbits.RE5){ // this means that player 1 wants to move "up" 
             paddle1 = 1;
             T3CONbits.TMR3ON = 1;
+            Delay10KTCYx(2);
 
         }
         else if (PORTEbits.RE5 && !PORTEbits.RE4){ // this means that player 1 wants to move "down"
             paddle1 = 2;
             T3CONbits.TMR3ON = 1;
+            Delay10KTCYx(2);
 
         }
     }
@@ -284,10 +363,12 @@ void update_paddles(void) {
         if (PORTJbits.RJ0 && !PORTJbits.RJ1){
             paddle2 = 1;
             T5CONbits.TMR5ON = 1;
+            Delay10KTCYx(2);
         }
         else if (PORTJbits.RJ1 && !PORTJbits.RJ0){
             paddle2 = 2;
             T5CONbits.TMR5ON = 1;
+            Delay10KTCYx(2);
         }
     }
 }
@@ -366,25 +447,31 @@ void print_paddle(unsigned char player){
         
         SetCursor(0, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         // and do a second line to make the paddle a little thicker
         SetCursor(1,cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         
         // now print the upper page
         cursor = paddle1max / 8;
         input = 0xFF >> (7 - (paddle1max % 8));
         SetCursor(0, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         SetCursor(1, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         
         // now I will print the possible middle page
         if ((cursor - (paddle1min / 8)) == 2){
             cursor--;
             SetCursor(0,cursor);
             WriteData(0xFF);   // the middle page is guaranteed to be full
+            Delay10KTCYx(2);
             SetCursor(1,cursor);
             WriteData(0xFF);
+            Delay10KTCYx(2);
         }
         
     }
@@ -394,25 +481,31 @@ void print_paddle(unsigned char player){
         
         SetCursor(127, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         // and do a second line to make the paddle a little thicker
         SetCursor(126,cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         
         // now print the upper page
         cursor = paddle2max / 8;
         input = 0xFF >> (7 - (paddle2max % 8));
         SetCursor(127, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         SetCursor(126, cursor);
         WriteData(input);
+        Delay10KTCYx(2);
         
         // now I will print the possible middle page
         if ((cursor - (paddle2min / 8)) == 2){
             cursor--;
             SetCursor(127,cursor);
             WriteData(0xFF);   // the middle page is guaranteed to be full
+            Delay10KTCYx(2);
             SetCursor(126,cursor);
             WriteData(0xFF);
+            Delay10KTCYx(2);
         }
     }
 }
@@ -474,6 +567,26 @@ void total_paddle_clear(void){
     }
 }
 
+void check_reset(void){
+    if (player1_points == 10 || player2_points == 10){
+        game = 0;
+        end_game();
+    }
+    
+    
+    if (PORTEbits.RE3){
+        Delay10KTCYx(4);
+        if (PORTEbits.RE3){
+            Delay10KTCYx(36000);
+            Delay10KTCYx(36000);
+            if (game == 1){
+                game = 0;
+                end_game ();
+            }
+        }
+    }
+}
+
 void end_game(void){
     
     unsigned char i;
@@ -482,7 +595,7 @@ void end_game(void){
     unsigned char q;
     unsigned char k;
     i = 45;
-    if (player1_points >= 10 || player2_points >= 10){
+    if (game == 0){
         score_board();
         player1_points = 0;
         player2_points = 0;
@@ -643,16 +756,22 @@ void end_game(void){
         
         begin_game();
         
+        game = 0;
         while (~ PORTEbits.RE3) {
             // wait for player to press start
         }
         
-        for (j = 3 ; j <= 4 ; j++){
-            for (i = 25 ; i <= 127-25  ; i++){
+        for (j = 0 ; j <= 8 ; j++){
+            for (i = 0 ; i <= 127  ; i++){
                 SetCursor(i,j);
                 WriteData(0x00);
             }
         }
+        
+        Initial_ball();
+        print_paddle(1);
+        print_paddle(2);
+    
 
     }
 }
@@ -916,12 +1035,13 @@ void begin_game(void){
     SetCursor(i+j-1,4);
     WriteData(0x0C);
     SetCursor(i+j-2,4);
-    WriteData(0xB8);
+    WriteData(0xBC);
     SetCursor(i+j-3,4);
-    WriteData(0xB8);
+    WriteData(0xBC);
     
     
 }
+
 
 void TMR0handler(void){
     
