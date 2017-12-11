@@ -18,13 +18,15 @@
 #define ball_high_byte 0xC0    // this seems the best with 0xD0
 #define paddle_min 24
 #define paddle_max 39
-#define paddle_tmr_high 0xD0
+#define paddle_tmr_high 0xF0
 #define paddle_tmr_low 0x00
 #define text 25
 
 struct ball_struct ball;
 unsigned char player1_points = 0;
 unsigned char player2_points = 0;
+unsigned char in_box1 = 0;
+unsigned char in_box2 = 0;
 unsigned char paddle1min = paddle_min;   // This is the bottom value for player 1's paddle
 unsigned char paddle1max = paddle_max;   // This is the top value for player 1's paddle
 unsigned char paddle2min = paddle_min;
@@ -116,8 +118,20 @@ void update_ball(void){
         cur_y = (unsigned char) ball.y_pos;
         
         if (cur_y == 11 || cur_y == 10){
-            temp = 1;
-            score_board();
+            if (cur_x < 22)
+                in_box1 = 1;
+            else if(cur_x > 105)
+                in_box2 = 1;
+        }
+        else{
+            if (in_box1 = 1){  // it just left the box
+                in_box1 = 0;
+                score_board(1);
+            }
+            if (in_box2 = 1){
+                in_box2 = 0;
+                score_board(2);
+            }
         }
         
         // Delete the pixels from last time
@@ -303,8 +317,6 @@ void update_ball(void){
             WriteData(pixels);
         }
         
-        
-        
         ball.done_waiting = 0;   // the ball now needs to go through another waiting cycle
     }
 }
@@ -318,28 +330,31 @@ void goal_scored(unsigned char player){
     total_paddle_clear();
     
     // now reset the ball 
-    score_board();
+    score_board(player);
     Initial_ball();
 }
 
-void score_board(){
+void score_board(unsigned char player){
     unsigned char i;
-    //unsigned char j;
     unsigned char score_1_location;
     unsigned char score_2_location;
-    
-    for (i = 1 ; i <= player1_points ; i++ ){
-        score_1_location = i * 2 + 3;
-        Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
-        SetCursor(score_1_location,0);
-        WriteData(0xFE);
+    //unsigned char j;
+    if (player == 1){
+        for (i = 1 ; i <= player1_points ; i++ ){
+            score_1_location = i * 2 + 3;
+            Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
+            SetCursor(score_1_location,0);
+            WriteData(0xFE);
+        }
     }
-
-    for (i = 1 ; i <= player2_points ; i++ ){
-        score_2_location = 127 - i * 2 - 3;;
-        Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
-        SetCursor(score_2_location,0);
-        WriteData(0xFE);
+    
+    if (player == 2){
+        for (i = 1 ; i <= player2_points ; i++ ){
+            score_2_location = 127 - i * 2 - 3;;
+            Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
+            SetCursor(score_2_location,0);
+            WriteData(0xFE);
+        }
     }
 }
 
@@ -447,31 +462,25 @@ void print_paddle(unsigned char player){
         
         SetCursor(0, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         // and do a second line to make the paddle a little thicker
         SetCursor(1,cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         
         // now print the upper page
         cursor = paddle1max / 8;
         input = 0xFF >> (7 - (paddle1max % 8));
         SetCursor(0, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         SetCursor(1, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         
         // now I will print the possible middle page
         if ((cursor - (paddle1min / 8)) == 2){
             cursor--;
             SetCursor(0,cursor);
             WriteData(0xFF);   // the middle page is guaranteed to be full
-            Delay10KTCYx(2);
             SetCursor(1,cursor);
             WriteData(0xFF);
-            Delay10KTCYx(2);
         }
         
     }
@@ -481,31 +490,25 @@ void print_paddle(unsigned char player){
         
         SetCursor(127, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         // and do a second line to make the paddle a little thicker
         SetCursor(126,cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         
         // now print the upper page
         cursor = paddle2max / 8;
         input = 0xFF >> (7 - (paddle2max % 8));
         SetCursor(127, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         SetCursor(126, cursor);
         WriteData(input);
-        Delay10KTCYx(2);
         
         // now I will print the possible middle page
         if ((cursor - (paddle2min / 8)) == 2){
             cursor--;
             SetCursor(127,cursor);
             WriteData(0xFF);   // the middle page is guaranteed to be full
-            Delay10KTCYx(2);
             SetCursor(126,cursor);
             WriteData(0xFF);
-            Delay10KTCYx(2);
         }
     }
 }
@@ -596,7 +599,8 @@ void end_game(void){
     unsigned char k;
     i = 45;
     if (game == 0){
-        score_board();
+        score_board(1);
+        score_board(2);
         player1_points = 0;
         player2_points = 0;
         

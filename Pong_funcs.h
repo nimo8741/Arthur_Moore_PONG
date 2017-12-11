@@ -52,7 +52,7 @@ void clear_paddle(unsigned char player);
 
 void total_paddle_clear(void);
 
-void score_board(void);
+void score_board(unsigned char player);
 
 void begin_game(void);
 
