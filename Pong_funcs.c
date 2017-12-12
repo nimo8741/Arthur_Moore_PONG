@@ -571,7 +571,7 @@ void total_paddle_clear(void){
 }
 
 void check_reset(void){
-    if (player1_points == 10 || player2_points == 10){
+    if (player1_points == 5 || player2_points == 5){
         game = 0;
         end_game();
     }
@@ -594,190 +594,296 @@ void end_game(void){
     
     unsigned char i;
     unsigned char j;
-    unsigned char p;
-    unsigned char q;
-    unsigned char k;
-    i = 45;
+    
     if (game == 0){
+    
         score_board(1);
         score_board(2);
-        player1_points = 0;
-        player2_points = 0;
-        
-        // E
+
+        /////////// P ///////////
+
+        i = 41;
+
         SetCursor(i,3);
-        WriteData(0xFF);
-        SetCursor(i,4);
         WriteData(0xFF);
 
         SetCursor(i+1,3);
-        WriteData(0xFF);
-        SetCursor(i+1,4);
-        WriteData(0xFF);
-
-        for (j = i + 2; j < i + 8; j++ ){
-            SetCursor(j,3);
-            WriteData(0x83);
-            SetCursor(j,4);
-            WriteData(0xC1);
-        }
-
-        // N
-        i = i + 12;
-
-        SetCursor(i,3);
-        WriteData(0xFF);
-        SetCursor(i,4);
-        WriteData(0xFF);
-        SetCursor(i-1,3);
-        WriteData(0xFF);
-        SetCursor(i-1,4);
-        WriteData(0xFF);
-
-        k = 1;
-        p = 1;
-        q = 1;
-        for (j = i+1 ; j <= i+1+8; j ++){
-
-            SetCursor(i+k,3);
-            WriteData(p+2*p);
-            SetCursor(i+1+k,3);
-            WriteData(p+2*p);
-
-            q++;
-            if (q%2 == 0){
-                k++;
-            }
-            p = p*2;
-        }
-
-
-        p = 1;
-        q = 1;
-        k --;
-        for (j = i ; j <= i+1+8; j ++){
-
-            SetCursor(i+k,4);
-            WriteData(p + 2*p);
-            SetCursor(i+1+k,4);
-            WriteData(p+2*p);
-
-            q++;
-            if (q%2 == 0){
-                k++;
-            }
-            p = p*2;
-        }
-
-        k--;
-        SetCursor(i+k,3);
-        WriteData(0xFF);
-        SetCursor(i+k,4);
-        WriteData(0xFF);
-        SetCursor(i+k+1,3);
-        WriteData(0xFF);
-        SetCursor(i+k+1,4);
-        WriteData(0xFF);
-
-        // D
-        i = i + 13;
-        SetCursor(i,3);
-        WriteData(0xFF);
-        SetCursor(i+1,3);
-        WriteData(0xFF);
-        SetCursor(i,4);
-        WriteData(0xFF);
-        SetCursor(i+1,4);
-        WriteData(0xFF);
-
+        WriteData(0x09);
         SetCursor(i+2,3);
-        WriteData(0x03);
+        WriteData(0x09);
         SetCursor(i+3,3);
+        WriteData(0x09);
+
+        SetCursor(i+4,3);
+        WriteData(0x0F);
+
+        /////////// L ///////////
+
+        i = i + 6;
+
+        SetCursor(i,3);
+        WriteData(0xFF);
+
+        SetCursor(i+1,3);
+        WriteData(0x80);
+        SetCursor(i+2,3);
+        WriteData(0x80);
+        SetCursor(i+3,3);
+        WriteData(0x80);
+
+        /////////// A ///////////
+
+        i = i + 5;
+
+        SetCursor(i,3);
+        WriteData(0xFF);
+
+        SetCursor(i+1,3);
+        WriteData(0x09);
+        SetCursor(i+2,3);
+        WriteData(0x09);
+        SetCursor(i+3,3);
+        WriteData(0x09);
+
+        SetCursor(i+4,3);
+        WriteData(0xFF);
+
+
+        /////////// Y ///////////
+
+        i = i + 6;
+
+        SetCursor(i,3);
+        WriteData(0x01);
+        SetCursor(i+1,3);
+        WriteData(0x02);
+        SetCursor(i+2,3);
+        WriteData(0x04);
+
+        SetCursor(i+3,3);
+        WriteData(0xF8);
+
+        SetCursor(i+4,3);
+        WriteData(0x04);
+        SetCursor(i+5,3);
+        WriteData(0x02);
+        SetCursor(i+6,3);
+        WriteData(0x01);
+
+
+        /////////// E ///////////
+
+        i = i + 8;
+
+        SetCursor(i,3);
+        WriteData(0xFF);
+
+        SetCursor(i+1,3);
+        WriteData(0x89);
+        SetCursor(i+2,3);
+        WriteData(0x89);
+        SetCursor(i+3,3);
+        WriteData(0x89);
+
+        /////////// R ///////////
+
+        i = i + 5;
+
+        SetCursor(i,3);
+        WriteData(0xFF);
+
+        SetCursor(i+1,3);
+        WriteData(0x19);
+        SetCursor(i+2,3);
+        WriteData(0x29);
+        SetCursor(i+3,3);
+        WriteData(0x49);
+        SetCursor(i+4,3);
+        WriteData(0x8F);
+
+
+        /////////// 1/2 ///////////
+
+        i = i + 7;
+
+        if (player1_points > player2_points){
+            SetCursor(i,3);
+            WriteData(0x82);
+
+            SetCursor(i+1,3);
+            WriteData(0x81);
+
+            SetCursor(i+2,3);
+            WriteData(0xFF);
+
+            //SetCursor(i+3,3);
+            //WriteData(0xFF);
+
+            SetCursor(i+3,3);
+            WriteData(0x80);
+
+            SetCursor(i+4,3);
+            WriteData(0x80);
+        }
+
+        if (player2_points > player1_points){
+
+            SetCursor(i,3);
+            WriteData(0x83);
+
+            SetCursor(i+1,3);
+            WriteData(0xC1);
+
+            SetCursor(i+2,3);
+            WriteData(0xA1);
+
+            SetCursor(i+3,3);
+            WriteData(0x91);
+
+            SetCursor(i+4,3);
+            WriteData(0x8F);
+        }
+
+        /////////// W ///////////
+
+        i = 50;
+
+        SetCursor(i,4);
+        WriteData(0xFF);
+
+        SetCursor(i+1,4);
+        WriteData(0x80);
+
+        SetCursor(i+2,4);
+        WriteData(0x60);
+
+        SetCursor(i+3,4);
+        WriteData(0x10);
+
+        SetCursor(i+4,4);
+        WriteData(0x60);
+
+        SetCursor(i+5,4);
+        WriteData(0x80);
+
+        SetCursor(i+6,4);
+        WriteData(0xFF);
+
+
+        /////////// I ///////////
+
+        i = i + 8;
+
+        SetCursor(i,4);
+        WriteData(0x81);
+
+        SetCursor(i+1,4);
+        WriteData(0xFF);
+
+        SetCursor(i+2,4);
+        WriteData(0x81);
+
+        /////////// N ///////////
+
+        i = i + 4;
+
+        SetCursor(i,4);
+        WriteData(0xFF);
+
+        SetCursor(i+1,4);
         WriteData(0x03);
 
         SetCursor(i+2,4);
-        WriteData(0xC0);
-        SetCursor(i+3,4);
-        WriteData(0xC0);
+        WriteData(0x0C);
 
-        SetCursor(i+4,3);
-        WriteData(0x03);
-        SetCursor(i+5,3);
-        WriteData(0x03);
+        SetCursor(i+3,4);
+        WriteData(0x30);
 
         SetCursor(i+4,4);
         WriteData(0xC0);
+
         SetCursor(i+5,4);
-        WriteData(0xC0);
+        WriteData(0xFF);
 
-        SetCursor(i+6,3);
-        WriteData(0x03);
-        SetCursor(i+7,3);
-        WriteData(0x03);
 
-        SetCursor(i+6,4);
-        WriteData(0xC0);
-        SetCursor(i+7,4);
-        WriteData(0xC0);
+        /////////// S ///////////
 
-        SetCursor(i+7,3);
-        WriteData(0x06);
-        SetCursor(i+8,3);
-        WriteData(0x0C);
+        i = i + 7;
 
-        SetCursor(i+7,4);
-        WriteData(0x60);
-        SetCursor(i+8,4);
-        WriteData(0x30);
+        SetCursor(i,4);
+        WriteData(0x8F);
 
-        SetCursor(i+9,3);
-        WriteData(0xF8);
-        SetCursor(i+10,3);
-        WriteData(0xF0);
+        SetCursor(i+1,4);
+        WriteData(0x89);
+        SetCursor(i+2,4);
+        WriteData(0x89);
+        SetCursor(i+3,4);
+        WriteData(0x89);
 
-        SetCursor(i+9,4);
-        WriteData(0x1F);
-        SetCursor(i+10,4);
-        WriteData(0x0F);
+        SetCursor(i+4,4);
+        WriteData(0xF9);
+
+
+
+        /////////// ExclamationPoint ///////////
+
+        i = i + 6;
+
+        SetCursor(i,4);
+        WriteData(0xBF);
+
+
+        /////////// ResetBoard ////////////
+
+        player1_points = 0;
+        player2_points = 0;
 
         Delay10KTCYx(36000);
         Delay10KTCYx(36000);
         Delay10KTCYx(36000);
+        Delay10KTCYx(36000);
+        Delay10KTCYx(36000);
+        Delay10KTCYx(36000);
 
+        // clear board
         for (j = 3 ; j <= 4 ; j++){
             for (i = 25 ; i <= 127-25  ; i++){
                 SetCursor(i,j);
                 WriteData(0x00);
             }
         }
-        
+
+        // clear scoreboard
         for (j = 0 ; j < 1 ; j++){
             for (i = 3 ; i <= 127-3  ; i++){
                 SetCursor(i,j);
                 WriteData(0x00);
             }
         }
-        
+
+        // print begin game
         begin_game();
-        
+
         game = 0;
         while (~ PORTEbits.RE3) {
             // wait for player to press start
         }
-        
+
+        // clear board
         for (j = 0 ; j <= 8 ; j++){
             for (i = 0 ; i <= 127  ; i++){
                 SetCursor(i,j);
                 WriteData(0x00);
             }
         }
-        
+
+        // initialize game
         Initial_ball();
         print_paddle(1);
         print_paddle(2);
-    
 
     }
+    
 }
 
 void begin_game(void){
