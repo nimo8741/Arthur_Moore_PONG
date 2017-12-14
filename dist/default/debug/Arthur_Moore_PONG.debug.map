@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Thu Dec 14 01:14:58 2017
+Linker Map File - Created Thu Dec 14 00:16:27 2017
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -33,23 +33,23 @@ Linker Map File - Created Thu Dec 14 01:14:58 2017
 .idata_GLCDroutinesEasyPic.o_i    romdata   0x000016    program   0x000002
                 lowVector       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00001a
-       .code_Pong_funcs.o       code   0x000038    program   0x002be6
-                     PROG       code   0x002c1e    program   0x000624
-           .code_sincos.o       code   0x003242    program   0x0005aa
-.code_GLCDroutinesEasyPic.o       code   0x0037ec    program   0x0001b4
-             .code_main.o       code   0x0039a0    program   0x000188
-         .code_UnpkMath.o       code   0x003b28    program   0x00011c
-               _cinit_scn       code   0x003c44    program   0x00009e
-             .code_fabs.o       code   0x003ce2    program   0x000066
-              .code_sin.o       code   0x003d48    program   0x000050
-              .code_cos.o       code   0x003d98    program   0x00004e
-             D10KTCYXCODE       code   0x003de6    program   0x00002e
-                    .code       code   0x003e14    program   0x000020
-             _startup_scn       code   0x003e34    program   0x00001c
-         .code_fxd0808u.o       code   0x003e50    program   0x00001c
-              D10TCYXCODE       code   0x003e6c    program   0x000016
-            .code_errno.o       code   0x003e82    program   0x000000
-            .code_c018i.o       code   0x003e82    program   0x000000
+       .code_Pong_funcs.o       code   0x000038    program   0x002b20
+                     PROG       code   0x002b58    program   0x000624
+           .code_sincos.o       code   0x00317c    program   0x0005aa
+.code_GLCDroutinesEasyPic.o       code   0x003726    program   0x0001b4
+             .code_main.o       code   0x0038da    program   0x000188
+         .code_UnpkMath.o       code   0x003a62    program   0x00011c
+               _cinit_scn       code   0x003b7e    program   0x00009e
+             .code_fabs.o       code   0x003c1c    program   0x000066
+              .code_sin.o       code   0x003c82    program   0x000050
+              .code_cos.o       code   0x003cd2    program   0x00004e
+             D10KTCYXCODE       code   0x003d20    program   0x00002e
+                    .code       code   0x003d4e    program   0x000020
+             _startup_scn       code   0x003d6e    program   0x00001c
+         .code_fxd0808u.o       code   0x003d8a    program   0x00001c
+              D10TCYXCODE       code   0x003da6    program   0x000016
+            .code_errno.o       code   0x003dbc    program   0x000000
+            .code_c018i.o       code   0x003dbc    program   0x000000
     .config_300000_main.o    romdata   0x300000    program   0x000001
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
@@ -81,7 +81,7 @@ Linker Map File - Created Thu Dec 14 01:14:58 2017
             .udata_main.o      udata   0x000074       data   0x000000
 .udata_GLCDroutinesEasyPic.o      udata   0x000074       data   0x000000
            .idata_c018i.o      idata   0x000074       data   0x000000
-                   .stack      udata   0x000e00       data   0x000100
+                   .stack      udata   0x000d00       data   0x000100
       .udata_Pong_funcs.o      udata   0x000f00       data   0x000014
            .udata_errno.o      udata   0x000f14       data   0x000002
               SFR_BANKED0      udata   0x000f16       data   0x00004a
@@ -92,226 +92,226 @@ Linker Map File - Created Thu Dec 14 01:14:58 2017
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x003e81      
+                            0x000000    0x003dbb      
                             0x300000    0x300003      
                             0x300005    0x300005      
-            16007 out of 132120 program addresses used, program memory utilization is 12%
+            15809 out of 132120 program addresses used, program memory utilization is 11%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                ClearGLCD   0x003966    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                ClearLine   0x0038e8    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                   D10K_1   0x003df2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x003dfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x003df0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10_1   0x003e7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                     D10x   0x003e74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-             Delay10KTCYx   0x003de6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-              Delay10TCYx   0x003e6c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                   Enable   0x003810    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                 FLO0832S   0x002c22    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                 FLO0832U   0x002c1e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                 FLO1632S   0x003074    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO1632U   0x003070    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO3232S   0x00309e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                 FLO3232U   0x00309a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                    FPA32   0x002c42    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                    FPD32   0x0030d0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    FPM32   0x002d6e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                    FPS32   0x002c40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 FXD0808U   0x003e50    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                 HiPriISR   0x003a4e    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                  INT3208   0x002e48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  INT3216   0x003176    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  INT3232   0x0031d4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                 InitGLCD   0x00382a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                  Initial   0x0039b4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                ClearGLCD   0x0038a0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                ClearLine   0x003822    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                   D10K_1   0x003d2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x003d38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x003d2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10_1   0x003db6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x003dae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+             Delay10KTCYx   0x003d20    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+              Delay10TCYx   0x003da6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                   Enable   0x00374a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                 FLO0832S   0x002b5c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                 FLO0832U   0x002b58    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                 FLO1632S   0x002fae    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO1632U   0x002faa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO3232S   0x002fd8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                 FLO3232U   0x002fd4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                    FPA32   0x002b7c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                    FPD32   0x00300a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    FPM32   0x002ca8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                    FPS32   0x002b7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 FXD0808U   0x003d8a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                 HiPriISR   0x003988    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                  INT3208   0x002d82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  INT3216   0x0030b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  INT3232   0x00310e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                 InitGLCD   0x003764    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                  Initial   0x0038ee    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
              Initial_ball   0x0000b8    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
            Initial_screen   0x000038    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                 LoPriISR   0x003a5c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                SetColumn   0x003840    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                SetCursor   0x0038c4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                  SetPage   0x003892    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                  TAGTB32   0x002e96    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\gtFP.asm
-                  TALTB32   0x002ea8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\ltFP.asm
-              TMR0handler   0x002c1a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR1handler   0x001282    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR3handler   0x001294    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR5handler   0x0012e0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                WriteData   0x0037ec    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-       _D10KTCYXCODE_0010   0x003df6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x003e02    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-        _D10TCYXCODE_000A   0x003e76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x003e78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x003e7a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                _UnpkMath   0x003b28    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
-              __FpCompare   0x002eba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                 __FpExit   0x002f70    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpPack   0x002f9c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-            __FpReturnNaN   0x002f64    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnNegInf   0x002f76    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnNegZero   0x002f8e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnPosInf   0x002f7c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnPosZero   0x002f96    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnSignInf   0x002f72    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-       __FpReturnSignZero   0x002f8a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpReturnW   0x002ff4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpUnPackA   0x003014    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x003044    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-       ___return_lbl00000   0x003e6a    program     static                          
-       ___return_lbl00000   0x003808    program     static                          
+                 LoPriISR   0x003996    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                SetColumn   0x00377a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                SetCursor   0x0037fe    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                  SetPage   0x0037cc    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                  TAGTB32   0x002dd0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\gtFP.asm
+                  TALTB32   0x002de2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\ltFP.asm
+              TMR0handler   0x002b54    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR1handler   0x001246    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR3handler   0x001258    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR5handler   0x0012a4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                WriteData   0x003726    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+       _D10KTCYXCODE_0010   0x003d30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x003d3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+        _D10TCYXCODE_000A   0x003db0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x003db2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x003db4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                _UnpkMath   0x003a62    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
+              __FpCompare   0x002df4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                 __FpExit   0x002eaa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpPack   0x002ed6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+            __FpReturnNaN   0x002e9e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x002eb0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x002ec8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x002eb6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x002ed0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x002eac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x002ec4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpReturnW   0x002f2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpUnPackA   0x002f4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x002f7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+       ___return_lbl00000   0x003da4    program     static                          
+       ___return_lbl00000   0x003742    program     static                          
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00000   0x00000c    program     static                          
-       ___return_lbl00001   0x003e4e    program     static                          
+       ___return_lbl00001   0x003d88    program     static                          
        ___return_lbl00001   0x00001c    program     static                          
-       ___return_lbl00002   0x003ce0    program     static                          
+       ___return_lbl00002   0x003c1a    program     static                          
                __config_0   0x300000    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_1   0x300001    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_2   0x300002    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_3   0x300003    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_4   0x300005    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x003c36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
-                   __pa_0   0x003630    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_1   0x003648    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_10   0x003704    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_11   0x003716    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_12   0x003724    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_13   0x00372a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_14   0x003744    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_15   0x003756    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_16   0x00377a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_17   0x00378c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_18   0x00379a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_19   0x0037ac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_2   0x003664    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_20   0x0037bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_21   0x0037c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_22   0x0037d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_23   0x0037da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_24   0x0037e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_3   0x00367e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_4   0x003688    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_5   0x00369e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_6   0x0036b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_7   0x0036c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_8   0x0036e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_9   0x0036fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-              __tmplbl_28   0x0010f0    program     static                          
-              __tmplbl_39   0x00220a    program     static                          
-            __zero_memory   0x003e14    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                _do_cinit   0x003c44    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __pa_0   0x003b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
+                   __pa_0   0x00356a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_1   0x003582    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_10   0x00363e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_11   0x003650    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_12   0x00365e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_13   0x003664    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_14   0x00367e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_15   0x003690    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_16   0x0036b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_17   0x0036c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_18   0x0036d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_19   0x0036e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_2   0x00359e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_20   0x0036f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_21   0x003702    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_22   0x00370c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_23   0x003714    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_24   0x00371a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_3   0x0035b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_4   0x0035c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_5   0x0035d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_6   0x0035ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_7   0x003600    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_8   0x00361a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_9   0x003634    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+              __tmplbl_22   0x0010ba    program     static                          
+              __tmplbl_32   0x002144    program     static                          
+            __zero_memory   0x003d4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                _do_cinit   0x003b7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                  _sincos   0x003242    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                 _startup   0x003e34    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                  _sincos   0x00317c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                 _startup   0x003d6e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
              atHighVector   0x000008    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
               atLowVector   0x000018    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-               begin_game   0x00221e    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              check_reset   0x00187a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-             clear_paddle   0x001658    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                compare_l   0x003e2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                copy_loop   0x003cb6    program     static                          
-            copy_one_byte   0x003cbc    program     static                          
-                      cos   0x003d98    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\cos.c
-                     done   0x003ce0    program     static                          
-             done_copying   0x003cca    program     static                          
-                 end_game   0x0018c0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                  endloop   0x003e66    program     static                          
-                     fabs   0x003ce2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\fabs.c
-              goal_scored   0x001104    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                 jANotInf   0x002c6a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jANotInf   0x002d8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                 jANotInf   0x0030ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 jANotNeg   0x002cfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jANotZero   0x003102    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-              jAandWsetup   0x002cce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                  jAisNeg   0x002f36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                 jAltBexp   0x002cbc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jBANotInf   0x002c60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jBNotInf   0x002c78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-              jBothFinite   0x002d9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-             jBothNotZero   0x002ed8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-             jBothNotZero   0x002da6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-            jDifOrPosSign   0x002c8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                      jEQ   0x002ef4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                    jExch   0x002f00    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                    jExit   0x0031d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jExit   0x003240    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jExit   0x002e94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                   jExpEQ   0x002f46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                   jFinal   0x002f2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-               jFinalSign   0x002d66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jHaveZero   0x002da2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                jI2F08Beg   0x002c2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                jI2F16Beg   0x003084    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                jI2F32Beg   0x0030b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                    jLoop   0x00312a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    jLoop   0x003214    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jLoop   0x0031b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x002e7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                jLoopExit   0x0031c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jLoopExit   0x002e8a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                jLoopExit   0x003228    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                     jMax   0x003186    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x002e58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                     jMax   0x0031e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jMaxNeg   0x003194    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x0031f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jMaxNeg   0x002e62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jMaxPos   0x00318a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x002e5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jMaxPos   0x0031e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                      jNE   0x002ef8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                    jNext   0x003150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jNoAdjust   0x00314e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                  jNoExch   0x002f20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-             jNotBothZero   0x002c90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                  jNotInf   0x003202    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jNotInf   0x002e6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jNotInf   0x0031a2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jPkLoop   0x002faa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkRoundDone   0x002ff4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jPkRoundIt   0x002fdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkShiftDone   0x002fc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-           jReturnPosInf0   0x002f80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                  jRotate   0x002f52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                   jShift   0x002f3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-               jShiftDone   0x002d26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-               jShiftLoop   0x002d18    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jSignDone   0x002d56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-              jSignedZero   0x0030f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 jSignsEQ   0x002edc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                  jUnpkA1   0x00301e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x003036    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x00302c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00304e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x003066    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x00305c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x003040    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jWNotNeg   0x002d12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                   jWr123   0x0031ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jWrZ123   0x0031fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jZero   0x0031fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jZero   0x00319c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jZero   0x002e68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-               jZero1and2   0x002f84    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                     loop   0x003e58    program     static                          
-                     loop   0x003e44    program     static                          
-                   loop_h   0x003e22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                   loop_l   0x003e2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                     main   0x0039a0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-           paddle_reflect   0x001580    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-             print_paddle   0x00132c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              score_board   0x001152    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                      sin   0x003d48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sin.c
-                     test   0x003c5e    program     static                          
-       total_paddle_clear   0x0017fc    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+               begin_game   0x002158    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              check_reset   0x0017b4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+             clear_paddle   0x00161c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                compare_l   0x003d64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                copy_loop   0x003bf0    program     static                          
+            copy_one_byte   0x003bf6    program     static                          
+                      cos   0x003cd2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\cos.c
+                     done   0x003c1a    program     static                          
+             done_copying   0x003c04    program     static                          
+                 end_game   0x0017fa    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                  endloop   0x003da0    program     static                          
+                     fabs   0x003c1c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\fabs.c
+              goal_scored   0x0010ce    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                 jANotInf   0x002ba4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jANotInf   0x002cc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                 jANotInf   0x003028    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 jANotNeg   0x002c38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jANotZero   0x00303c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+              jAandWsetup   0x002c08    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                  jAisNeg   0x002e70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                 jAltBexp   0x002bf6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jBANotInf   0x002b9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jBNotInf   0x002bb2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+              jBothFinite   0x002cd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+             jBothNotZero   0x002e12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+             jBothNotZero   0x002ce0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+            jDifOrPosSign   0x002bc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                      jEQ   0x002e2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                    jExch   0x002e3a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                    jExit   0x00310c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jExit   0x00317a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jExit   0x002dce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                   jExpEQ   0x002e80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                   jFinal   0x002e64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+               jFinalSign   0x002ca0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jHaveZero   0x002cdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                jI2F08Beg   0x002b66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                jI2F16Beg   0x002fbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                jI2F32Beg   0x002ff0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                    jLoop   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    jLoop   0x00314e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jLoop   0x0030ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x002db6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                jLoopExit   0x0030fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jLoopExit   0x002dc4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                jLoopExit   0x003162    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                     jMax   0x0030c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x002d92    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                     jMax   0x00311e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jMaxNeg   0x0030ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x003130    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jMaxNeg   0x002d9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jMaxPos   0x0030c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x002d96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jMaxPos   0x003122    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                      jNE   0x002e32    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                    jNext   0x00308a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jNoAdjust   0x003088    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                  jNoExch   0x002e5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+             jNotBothZero   0x002bca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                  jNotInf   0x00313c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jNotInf   0x002da6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jNotInf   0x0030dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jPkLoop   0x002ee4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkRoundDone   0x002f2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jPkRoundIt   0x002f16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkShiftDone   0x002f00    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x002eba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                  jRotate   0x002e8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                   jShift   0x002e76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+               jShiftDone   0x002c60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+               jShiftLoop   0x002c52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jSignDone   0x002c90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+              jSignedZero   0x003032    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 jSignsEQ   0x002e16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                  jUnpkA1   0x002f58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x002f70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x002f66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x002f88    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x002fa0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x002f96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x002f7a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jWNotNeg   0x002c4c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                   jWr123   0x003128    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jWrZ123   0x003138    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jZero   0x003136    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jZero   0x0030d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jZero   0x002da2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+               jZero1and2   0x002ebe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                     loop   0x003d92    program     static                          
+                     loop   0x003d7e    program     static                          
+                   loop_h   0x003d5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                   loop_l   0x003d66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                     main   0x0038da    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+           paddle_reflect   0x001544    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+             print_paddle   0x0012f0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              score_board   0x001116    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                      sin   0x003c82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sin.c
+                     test   0x003b98    program     static                          
+       total_paddle_clear   0x001736    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
               update_ball   0x00020c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-           update_paddles   0x00120c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-               zero_block   0x003e22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+           update_paddles   0x0011d0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+               zero_block   0x003d5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
@@ -811,201 +811,201 @@ Linker Map File - Created Thu Dec 14 01:14:58 2017
            Initial_screen   0x000038    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
              Initial_ball   0x0000b8    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
               update_ball   0x00020c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              __tmplbl_28   0x0010f0    program     static                          
-              goal_scored   0x001104    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              score_board   0x001152    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-           update_paddles   0x00120c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR1handler   0x001282    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR3handler   0x001294    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR5handler   0x0012e0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-             print_paddle   0x00132c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-           paddle_reflect   0x001580    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-             clear_paddle   0x001658    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-       total_paddle_clear   0x0017fc    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              check_reset   0x00187a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                 end_game   0x0018c0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              __tmplbl_39   0x00220a    program     static                          
-               begin_game   0x00221e    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-              TMR0handler   0x002c1a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
-                 FLO0832U   0x002c1e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                 FLO0832S   0x002c22    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                jI2F08Beg   0x002c2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
-                    FPS32   0x002c40    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                    FPA32   0x002c42    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jBANotInf   0x002c60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jANotInf   0x002c6a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jBNotInf   0x002c78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-            jDifOrPosSign   0x002c8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-             jNotBothZero   0x002c90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jAltBexp   0x002cbc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-              jAandWsetup   0x002cce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jANotNeg   0x002cfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                 jWNotNeg   0x002d12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-               jShiftLoop   0x002d18    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-               jShiftDone   0x002d26    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                jSignDone   0x002d56    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-               jFinalSign   0x002d66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
-                    FPM32   0x002d6e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                 jANotInf   0x002d8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-              jBothFinite   0x002d9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                jHaveZero   0x002da2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-             jBothNotZero   0x002da6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
-                  INT3208   0x002e48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                     jMax   0x002e58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jMaxPos   0x002e5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jMaxNeg   0x002e62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                    jZero   0x002e68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  jNotInf   0x002e6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                    jLoop   0x002e7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                jLoopExit   0x002e8a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                    jExit   0x002e94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
-                  TAGTB32   0x002e96    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\gtFP.asm
-                  TALTB32   0x002ea8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\ltFP.asm
-              __FpCompare   0x002eba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-             jBothNotZero   0x002ed8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                 jSignsEQ   0x002edc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                      jEQ   0x002ef4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                      jNE   0x002ef8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                    jExch   0x002f00    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                  jNoExch   0x002f20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                   jFinal   0x002f2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                  jAisNeg   0x002f36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                   jShift   0x002f3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                   jExpEQ   0x002f46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-                  jRotate   0x002f52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
-            __FpReturnNaN   0x002f64    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpExit   0x002f70    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnSignInf   0x002f72    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnNegInf   0x002f76    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-         __FpReturnPosInf   0x002f7c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-           jReturnPosInf0   0x002f80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jZero1and2   0x002f84    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-       __FpReturnSignZero   0x002f8a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnNegZero   0x002f8e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-        __FpReturnPosZero   0x002f96    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                 __FpPack   0x002f9c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-                  jPkLoop   0x002faa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkShiftDone   0x002fc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-               jPkRoundIt   0x002fdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpReturnW   0x002ff4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-             jPkRoundDone   0x002ff4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
-              __FpUnPackA   0x003014    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA1   0x00301e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkANZ   0x00302c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkA2   0x003036    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkNaN   0x003040    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-              __FpUnPackB   0x003044    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB1   0x00304e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 jUnpkBNZ   0x00305c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                  jUnpkB2   0x003066    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
-                 FLO1632U   0x003070    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO1632S   0x003074    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                jI2F16Beg   0x003084    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
-                 FLO3232U   0x00309a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                 FLO3232S   0x00309e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                jI2F32Beg   0x0030b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
-                    FPD32   0x0030d0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                 jANotInf   0x0030ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-              jSignedZero   0x0030f8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jANotZero   0x003102    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    jLoop   0x00312a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                jNoAdjust   0x00314e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                    jNext   0x003150    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
-                  INT3216   0x003176    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                     jMax   0x003186    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxPos   0x00318a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jMaxNeg   0x003194    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jZero   0x00319c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  jNotInf   0x0031a2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jLoop   0x0031b2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                jLoopExit   0x0031c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                    jExit   0x0031d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
-                  INT3232   0x0031d4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                     jMax   0x0031e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jMaxPos   0x0031e8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                   jWr123   0x0031ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jMaxNeg   0x0031f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jZero   0x0031fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jWrZ123   0x0031fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  jNotInf   0x003202    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jLoop   0x003214    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                jLoopExit   0x003228    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                    jExit   0x003240    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
-                  _sincos   0x003242    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_0   0x003630    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_1   0x003648    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_2   0x003664    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_3   0x00367e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_4   0x003688    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_5   0x00369e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_6   0x0036b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_7   0x0036c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_8   0x0036e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                   __pa_9   0x0036fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_10   0x003704    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_11   0x003716    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_12   0x003724    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_13   0x00372a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_14   0x003744    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_15   0x003756    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_16   0x00377a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_17   0x00378c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_18   0x00379a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_19   0x0037ac    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_20   0x0037bc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_21   0x0037c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_22   0x0037d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_23   0x0037da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                  __pa_24   0x0037e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
-                WriteData   0x0037ec    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-       ___return_lbl00000   0x003808    program     static                          
-                   Enable   0x003810    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                 InitGLCD   0x00382a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                SetColumn   0x003840    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                  SetPage   0x003892    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                SetCursor   0x0038c4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                ClearLine   0x0038e8    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                ClearGLCD   0x003966    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
-                     main   0x0039a0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                  Initial   0x0039b4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                 HiPriISR   0x003a4e    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                 LoPriISR   0x003a5c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
-                _UnpkMath   0x003b28    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
-                   __pa_0   0x003c36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
-                _do_cinit   0x003c44    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x003c5e    program     static                          
-                copy_loop   0x003cb6    program     static                          
-            copy_one_byte   0x003cbc    program     static                          
-             done_copying   0x003cca    program     static                          
-                     done   0x003ce0    program     static                          
-       ___return_lbl00002   0x003ce0    program     static                          
-                     fabs   0x003ce2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\fabs.c
-                      sin   0x003d48    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sin.c
-                      cos   0x003d98    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\cos.c
-             Delay10KTCYx   0x003de6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kx   0x003df0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                   D10K_1   0x003df2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_0010   0x003df6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-                    D10Kl   0x003dfe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-       _D10KTCYXCODE_001C   0x003e02    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
-            __zero_memory   0x003e14    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                   loop_h   0x003e22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-               zero_block   0x003e22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                compare_l   0x003e2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                   loop_l   0x003e2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
-                 _startup   0x003e34    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x003e44    program     static                          
-       ___return_lbl00001   0x003e4e    program     static                          
-                 FXD0808U   0x003e50    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                     loop   0x003e58    program     static                          
-                  endloop   0x003e66    program     static                          
-       ___return_lbl00000   0x003e6a    program     static                          
-              Delay10TCYx   0x003e6c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                     D10x   0x003e74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000A   0x003e76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000C   0x003e78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-        _D10TCYXCODE_000E   0x003e7a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
-                    D10_1   0x003e7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+              __tmplbl_22   0x0010ba    program     static                          
+              goal_scored   0x0010ce    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              score_board   0x001116    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+           update_paddles   0x0011d0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR1handler   0x001246    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR3handler   0x001258    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR5handler   0x0012a4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+             print_paddle   0x0012f0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+           paddle_reflect   0x001544    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+             clear_paddle   0x00161c    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+       total_paddle_clear   0x001736    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              check_reset   0x0017b4    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                 end_game   0x0017fa    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              __tmplbl_32   0x002144    program     static                          
+               begin_game   0x002158    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+              TMR0handler   0x002b54    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\Pong_funcs.c
+                 FLO0832U   0x002b58    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                 FLO0832S   0x002b5c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                jI2F08Beg   0x002b66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast08FP.asm
+                    FPS32   0x002b7a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                    FPA32   0x002b7c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jBANotInf   0x002b9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jANotInf   0x002ba4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jBNotInf   0x002bb2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+            jDifOrPosSign   0x002bc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+             jNotBothZero   0x002bca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jAltBexp   0x002bf6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+              jAandWsetup   0x002c08    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jANotNeg   0x002c38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                 jWNotNeg   0x002c4c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+               jShiftLoop   0x002c52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+               jShiftDone   0x002c60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                jSignDone   0x002c90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+               jFinalSign   0x002ca0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\addFP.asm
+                    FPM32   0x002ca8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                 jANotInf   0x002cc6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+              jBothFinite   0x002cd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                jHaveZero   0x002cdc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+             jBothNotZero   0x002ce0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\mulFP.asm
+                  INT3208   0x002d82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                     jMax   0x002d92    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jMaxPos   0x002d96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jMaxNeg   0x002d9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                    jZero   0x002da2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  jNotInf   0x002da6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                    jLoop   0x002db6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                jLoopExit   0x002dc4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                    jExit   0x002dce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP08.asm
+                  TAGTB32   0x002dd0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\gtFP.asm
+                  TALTB32   0x002de2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\ltFP.asm
+              __FpCompare   0x002df4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+             jBothNotZero   0x002e12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                 jSignsEQ   0x002e16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                      jEQ   0x002e2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                      jNE   0x002e32    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                    jExch   0x002e3a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                  jNoExch   0x002e5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                   jFinal   0x002e64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                  jAisNeg   0x002e70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                   jShift   0x002e76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                   jExpEQ   0x002e80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+                  jRotate   0x002e8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\compFP.asm
+            __FpReturnNaN   0x002e9e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpExit   0x002eaa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x002eac    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x002eb0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x002eb6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x002eba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jZero1and2   0x002ebe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x002ec4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x002ec8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x002ed0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                 __FpPack   0x002ed6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+                  jPkLoop   0x002ee4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkShiftDone   0x002f00    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+               jPkRoundIt   0x002f16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpReturnW   0x002f2e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+             jPkRoundDone   0x002f2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\packFP.asm
+              __FpUnPackA   0x002f4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA1   0x002f58    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x002f66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x002f70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x002f7a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x002f7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x002f88    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x002f96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x002fa0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\UnpackFP.asm
+                 FLO1632U   0x002faa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO1632S   0x002fae    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                jI2F16Beg   0x002fbe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast16FP.asm
+                 FLO3232U   0x002fd4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                 FLO3232S   0x002fd8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                jI2F32Beg   0x002ff0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cast32FP.asm
+                    FPD32   0x00300a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                 jANotInf   0x003028    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+              jSignedZero   0x003032    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jANotZero   0x00303c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    jLoop   0x003064    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                jNoAdjust   0x003088    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                    jNext   0x00308a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\divFP.asm
+                  INT3216   0x0030b0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                     jMax   0x0030c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxPos   0x0030c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jMaxNeg   0x0030ce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jZero   0x0030d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  jNotInf   0x0030dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jLoop   0x0030ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                jLoopExit   0x0030fc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                    jExit   0x00310c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP16.asm
+                  INT3232   0x00310e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                     jMax   0x00311e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jMaxPos   0x003122    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                   jWr123   0x003128    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jMaxNeg   0x003130    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jZero   0x003136    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jWrZ123   0x003138    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  jNotInf   0x00313c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jLoop   0x00314e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                jLoopExit   0x003162    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                    jExit   0x00317a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\castFP32.asm
+                  _sincos   0x00317c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_0   0x00356a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_1   0x003582    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_2   0x00359e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_3   0x0035b8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_4   0x0035c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_5   0x0035d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_6   0x0035ee    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_7   0x003600    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_8   0x00361a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                   __pa_9   0x003634    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_10   0x00363e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_11   0x003650    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_12   0x00365e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_13   0x003664    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_14   0x00367e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_15   0x003690    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_16   0x0036b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_17   0x0036c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_18   0x0036d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_19   0x0036e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_20   0x0036f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_21   0x003702    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_22   0x00370c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_23   0x003714    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                  __pa_24   0x00371a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sincos.c
+                WriteData   0x003726    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+       ___return_lbl00000   0x003742    program     static                          
+                   Enable   0x00374a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                 InitGLCD   0x003764    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                SetColumn   0x00377a    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                  SetPage   0x0037cc    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                SetCursor   0x0037fe    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                ClearLine   0x003822    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                ClearGLCD   0x0038a0    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\GLCDroutinesEasyPic.c
+                     main   0x0038da    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                  Initial   0x0038ee    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                 HiPriISR   0x003988    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                 LoPriISR   0x003996    program     extern C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
+                _UnpkMath   0x003a62    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
+                   __pa_0   0x003b70    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\UnpkMath.c
+                _do_cinit   0x003b7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x003b98    program     static                          
+                copy_loop   0x003bf0    program     static                          
+            copy_one_byte   0x003bf6    program     static                          
+             done_copying   0x003c04    program     static                          
+                     done   0x003c1a    program     static                          
+       ___return_lbl00002   0x003c1a    program     static                          
+                     fabs   0x003c1c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\fabs.c
+                      sin   0x003c82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sin.c
+                      cos   0x003cd2    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\cos.c
+             Delay10KTCYx   0x003d20    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kx   0x003d2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                   D10K_1   0x003d2c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_0010   0x003d30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+                    D10Kl   0x003d38    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+       _D10KTCYXCODE_001C   0x003d3c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10ktcyx.asm
+            __zero_memory   0x003d4e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                   loop_h   0x003d5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+               zero_block   0x003d5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                compare_l   0x003d64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                   loop_l   0x003d66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f87k22.asm
+                 _startup   0x003d6e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x003d7e    program     static                          
+       ___return_lbl00001   0x003d88    program     static                          
+                 FXD0808U   0x003d8a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                     loop   0x003d92    program     static                          
+                  endloop   0x003da0    program     static                          
+       ___return_lbl00000   0x003da4    program     static                          
+              Delay10TCYx   0x003da6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x003dae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x003db0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x003db2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x003db4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                    D10_1   0x003db6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
                __config_0   0x300000    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_1   0x300001    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c
                __config_2   0x300002    program     static C:\Users\nickm\Documents\CU-Boulder Senior Year\ASEN 4419\Final Project\Arthur_Moore_PONG\main.c

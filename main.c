@@ -48,11 +48,7 @@ void main() {
          check_reset();
          update_paddles();
          update_ball();
-         
-         
-         //ADCTemperature();
-         // check for reset request down here
-         
+                  
      }
 }
 

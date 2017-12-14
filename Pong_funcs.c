@@ -15,18 +15,18 @@
 #define min_x 1
 #define scale 2
 #define ball_low_byte 0x00
-#define ball_high_byte 0xC0    // this seems the best with 0xD0
+#define ball_high_byte 0xD0    // this seems the best with 0xD0
 #define paddle_min 24
 #define paddle_max 39
-#define paddle_tmr_high 0xF0
+#define paddle_tmr_high 0xC8
 #define paddle_tmr_low 0x00
-#define text 25
+#define text 28
 
 struct ball_struct ball;
 unsigned char player1_points = 0;
 unsigned char player2_points = 0;
-unsigned char in_box1 = 0;
-unsigned char in_box2 = 0;
+unsigned char in_box1;
+unsigned char in_box2;
 unsigned char paddle1min = paddle_min;   // This is the bottom value for player 1's paddle
 unsigned char paddle1max = paddle_max;   // This is the top value for player 1's paddle
 unsigned char paddle2min = paddle_min;
@@ -41,6 +41,8 @@ void Initial_screen(){
     
     unsigned char j;
     unsigned char i;
+    in_box1 = 0;
+    in_box2 = 0;
     
     game = 0;
     begin_game();            // this asks the begin game question and generates the random number
@@ -60,7 +62,7 @@ void Initial_screen(){
     
     // clear board
     for (j = 3 ; j <= 4 ; j++){
-        for (i = 25 ; i <= 127-25  ; i++){
+        for (i = text ; i <= 127-text+4  ; i++){
             SetCursor(i,j);
             WriteData(0x00);
         }
@@ -124,11 +126,11 @@ void update_ball(void){
                 in_box2 = 1;
         }
         else{
-            if (in_box1 = 1){  // it just left the box
+            if (in_box1 == 1 && (cur_y > 13 || cur_x > 22)){  // it just left the box
                 in_box1 = 0;
                 score_board(1);
             }
-            if (in_box2 = 1){
+            if (in_box2 == 1 && (cur_y > 13 || cur_x < 105)){
                 in_box2 = 0;
                 score_board(2);
             }
@@ -199,6 +201,7 @@ void update_ball(void){
             SetCursor(cur_x + 1, cur_y / 8);
             WriteData(0);
         }
+        PORTEbits.RE0 = ~PORTEbits.RE0;
 
        // Now the hit detection on angle updating
        
@@ -244,10 +247,12 @@ void update_ball(void){
         }
         else if (cur_x == min_x) { // this is a goal for player 2
             goal_scored(1);
+            score_board(1);
             return;
         } 
         else if (cur_x == max_x){
             goal_scored(0); // goal scored for player 1
+            score_board(2);
             return;
         }
         // now update the position of the ball
@@ -318,6 +323,7 @@ void update_ball(void){
         }
         
         ball.done_waiting = 0;   // the ball now needs to go through another waiting cycle
+        T0CONbits.TMR0ON = 1;  // turn on the timer
     }
 }
 
@@ -329,7 +335,12 @@ void goal_scored(unsigned char player){
     
     total_paddle_clear();
     
+    if (!player)
+        player = 1;
+    else
+        player = 2;
     // now reset the ball 
+    ClearGLCD();
     score_board(player);
     Initial_ball();
 }
@@ -341,7 +352,7 @@ void score_board(unsigned char player){
     //unsigned char j;
     if (player == 1){
         for (i = 1 ; i <= player1_points ; i++ ){
-            score_1_location = i * 2 + 3;
+            score_1_location = i * 2 + 5;
             Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
             SetCursor(score_1_location,0);
             WriteData(0xFE);
@@ -350,7 +361,7 @@ void score_board(unsigned char player){
     
     if (player == 2){
         for (i = 1 ; i <= player2_points ; i++ ){
-            score_2_location = 127 - i * 2 - 3;;
+            score_2_location = 127 - i * 2 - 5;
             Delay10KTCYx(2); // for some reason it gets weird if I don't wait this long
             SetCursor(score_2_location,0);
             WriteData(0xFE);
@@ -392,7 +403,10 @@ void TMR1handler() {
     ball.done_waiting = 1;  // this means that the ball has completed its waiting cycle
     TMR1H = ball_high_byte;
     TMR1L = ball_low_byte; 
+    // toggle a led 
     PIR1bits.TMR1IF = 0;      //Clear flag and return to polling routine
+    // turn off the timer
+    T0CONbits.TMR0ON = 0;
 }
 
 void TMR3handler(){
@@ -543,6 +557,14 @@ void clear_paddle(unsigned char player){
         WriteData(0);
         SetCursor(1, paddle1max / 8);
         WriteData(0);
+        SetCursor(2, paddle1min / 8);
+        WriteData(0);
+        SetCursor(2, paddle1max / 8);  // I don't know why but player 1 has an issue
+        WriteData(0);
+        SetCursor(3, paddle1min / 8);
+        WriteData(0);
+        SetCursor(3, paddle1max / 8);
+        WriteData(0);
     }
     else if (player == 2){
         SetCursor(126, paddle2min / 8);
@@ -601,7 +623,7 @@ void end_game(void){
         score_board(2);
 
         /////////// P ///////////
-
+        if (player1_points != player2_points){
         i = 41;
 
         SetCursor(i,3);
@@ -831,7 +853,47 @@ void end_game(void){
 
         SetCursor(i,4);
         WriteData(0xBF);
+        }
+        else{
+            i = 56;
+            // T
+            SetCursor(i,4);
+            WriteData(1);
+            SetCursor(i+1,4);
+            WriteData(1);
+            SetCursor(i+2,4);
+            WriteData(0xFF);
+            SetCursor(i+3,4);
+            WriteData(1);
+            SetCursor(i+4,4);
+            WriteData(1);
+            
+            // I
+            i = i + 6;
 
+            SetCursor(i,4);
+            WriteData(0x81);
+
+            SetCursor(i+1,4);
+            WriteData(0xFF);
+
+            SetCursor(i+2,4);
+            WriteData(0x81);
+            
+            
+            // E ///////////////////
+            i = i + 4;
+
+            SetCursor(i,4);
+            WriteData(0xFF);
+
+            SetCursor(i+1,4);
+            WriteData(0x89);
+            SetCursor(i+2,4);
+            WriteData(0x89);
+            SetCursor(i+3,4);
+            WriteData(0x89);
+        }
 
         /////////// ResetBoard ////////////
 
@@ -1152,7 +1214,7 @@ void begin_game(void){
     
 }
 
-
 void TMR0handler(void){
-    
+   // just clear the flag and move on
+    INTCONbits.TMR0IF = 0;
 }
