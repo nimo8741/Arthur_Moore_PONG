@@ -15,12 +15,12 @@
 #define min_x 1
 #define scale 2
 #define ball_low_byte 0x00
-#define ball_high_byte 0xD0    // this seems the best with 0xD0
-#define paddle_min 24
+#define ball_high_byte 0xD0    // this is the value to change the speed of the ball.  To speed it up, make this number bigger
+#define paddle_min 24 
 #define paddle_max 39
-#define paddle_tmr_high 0xC8
+#define paddle_tmr_high 0xC8   // this is the value to change the speed of the ball.  To speed it up, make this number bigger 
 #define paddle_tmr_low 0x00
-#define text 28
+#define text 28    // starting position for the BEGIN? text
 
 struct ball_struct ball;
 unsigned char player1_points = 0;
@@ -35,6 +35,18 @@ unsigned char paddle1 = 0;   // this means that player 1 has pressed neither but
 unsigned char paddle2 = 0;   // this means that player 2 has pressed neither button
 float ADCResult;
 unsigned char game;
+
+//////////////////////////////////////////
+// Function: Initial_screen
+// Inputs: none
+// Outputs: none
+// What does it do?
+// This function initializes the GLCD screen
+// with the BEGIN? message and starts the 
+// timer0 which will give the random number
+// so that the beginning of the game is
+// randomized
+//////////////////////////////////////////
 
 
 void Initial_screen(){
@@ -61,25 +73,25 @@ void Initial_screen(){
     }
     
     // clear board
-    for (j = 3 ; j <= 4 ; j++){
-        for (i = text ; i <= 127-text+4  ; i++){
-            SetCursor(i,j);
-            WriteData(0x00);
-        }
-    }
-                      }
+    ClearGLCD();
+}
+
+//////////////////////////////////////////
+// Function: Initial_ball
+// Inputs: none
+// Outputs: none
+// What does it do?
+// This function uses the timer registers to
+// give the ball its starting trajectory as 
+// well as position.  Then it prints the
+// starting position for the paddles
+//////////////////////////////////////////
 
 void Initial_ball() {
     char delta;
     unsigned char rand1, rand2;
     float angle;
-    
-    //ADCResult = 0;
-    //ADCTemperature();
-    
-    //rand1 = rand() % 2;
-    //rand2 = rand() % 2;
-    rand2 = TMR0L % 2;
+    rand2 = TMR0L % 2;  // this uses the timer registers as a pseudo random number generator
     rand1 = TMR0L % 3;
     delta = TMR0L/5;
     if (rand1)
@@ -88,7 +100,7 @@ void Initial_ball() {
         angle = 0;
     if (rand2)
         delta *= -1;
-    angle = angle + delta;
+    angle = angle + delta;  // add in this deflection from straight at the 
     ball.x_pos = 64;
     ball.y_pos = 32;
     ball.theta = angle;
@@ -101,24 +113,40 @@ void Initial_ball() {
     paddle2min = paddle_min;
     paddle2max = paddle_max;
     
+    // print the paddles to the screen
     print_paddle(1);
     print_paddle(2);
     
 }
 
+//////////////////////////////////////////
+// Function: update_ball
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function first deleted the instance
+ * of the ball which is on screen.  Then it
+ * increments the position of the ball.  If 
+ * the ball is at the upper or lower wall, it
+ * changes the direction of travel to account
+ * for the reflect.  If it is in the same location
+ * as one of the paddles, it uses the reflection 
+ * scheme laid out in the report.
+*/
+//////////////////////////////////////////
 void update_ball(void){
     unsigned char pixels;
     unsigned char hit_paddle;
     unsigned char temp;
     game = 1;
 
-    // first clear the old pixel
+    // first clear the old pixels
     if (ball.done_waiting){
         unsigned char cur_x, cur_y;
 
         cur_x = (unsigned char) ball.x_pos;
         cur_y = (unsigned char) ball.y_pos;
-        
+        // take care of if the ball has entered the region for the scoreboard
         if (cur_y == 11 || cur_y == 10){
             if (cur_x < 22)
                 in_box1 = 1;
@@ -128,7 +156,7 @@ void update_ball(void){
         else{
             if (in_box1 == 1 && (cur_y > 13 || cur_x > 22)){  // it just left the box
                 in_box1 = 0;
-                score_board(1);
+                score_board(1);  // need to reprint the scoreboard because the ball has left the box
             }
             if (in_box2 == 1 && (cur_y > 13 || cur_x < 105)){
                 in_box2 = 0;
@@ -271,6 +299,8 @@ void update_ball(void){
         cur_x = (unsigned char) ball.x_pos;
         cur_y = (unsigned char) ball.y_pos;
 
+        // Now go through the process of printing the ball.  It is 
+        // the same as when we deleted the ball just with a different value to send.
         // now find the three vertical pixels to light up
         pixels = 1 << (cur_y % 8);
         if (!(cur_y % 8)){  // the top pixel is on the previous page
@@ -323,10 +353,20 @@ void update_ball(void){
         }
         
         ball.done_waiting = 0;   // the ball now needs to go through another waiting cycle
-        T0CONbits.TMR0ON = 1;  // turn on the timer
+        T0CONbits.TMR0ON = 1;  // turn on the timer because now we wait
     }
 }
 
+//////////////////////////////////////////
+// Function: goal_scored
+// Inputs: unsigned char player
+// Outputs: none
+// What does it do?
+/* This function increments the score date for
+ * when a goal has been scored.  It also clear the
+ * screen before reprinting everything
+*/
+//////////////////////////////////////////
 void goal_scored(unsigned char player){
     if (!player)
         player1_points++;
@@ -345,11 +385,21 @@ void goal_scored(unsigned char player){
     Initial_ball();
 }
 
+//////////////////////////////////////////
+// Function: score_board())
+// Inputs: unsigned char player
+// Outputs: none
+// What does it do?
+/* This function function goes through the process of
+ * actually changing what the scoreboard displays
+*/
+//////////////////////////////////////////
+
 void score_board(unsigned char player){
     unsigned char i;
     unsigned char score_1_location;
     unsigned char score_2_location;
-    //unsigned char j;
+    // Score for player 1
     if (player == 1){
         for (i = 1 ; i <= player1_points ; i++ ){
             score_1_location = i * 2 + 5;
@@ -359,6 +409,7 @@ void score_board(unsigned char player){
         }
     }
     
+    // Score for player 2
     if (player == 2){
         for (i = 1 ; i <= player2_points ; i++ ){
             score_2_location = 127 - i * 2 - 5;
@@ -369,16 +420,28 @@ void score_board(unsigned char player){
     }
 }
 
+//////////////////////////////////////////
+// Function: update_paddles())
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function checks to see if the player
+ * wants the paddles to move turns on the waiting
+ * timer if they do.  It also sets a value accordingly
+ * which describes if the paddle should move up
+ * or down.
+*/
+//////////////////////////////////////////
 void update_paddles(void) {
     // first check if the buttons for player 1 have been pressed 
     if (!paddle1) {
-        if (PORTEbits.RE4 && !PORTEbits.RE5){ // this means that player 1 wants to move "up" 
+        if (PORTEbits.RE4 && !PORTEbits.RE5){ // this means that player 1 wants to move down 
             paddle1 = 1;
             T3CONbits.TMR3ON = 1;
             Delay10KTCYx(2);
 
         }
-        else if (PORTEbits.RE5 && !PORTEbits.RE4){ // this means that player 1 wants to move "down"
+        else if (PORTEbits.RE5 && !PORTEbits.RE4){ // this means that player 1 wants to move up
             paddle1 = 2;
             T3CONbits.TMR3ON = 1;
             Delay10KTCYx(2);
@@ -386,12 +449,12 @@ void update_paddles(void) {
         }
     }
     if (!paddle2){
-        if (PORTJbits.RJ0 && !PORTJbits.RJ1){
+        if (PORTJbits.RJ0 && !PORTJbits.RJ1){  // paddle should move down
             paddle2 = 1;
             T5CONbits.TMR5ON = 1;
             Delay10KTCYx(2);
         }
-        else if (PORTJbits.RJ1 && !PORTJbits.RJ0){
+        else if (PORTJbits.RJ1 && !PORTJbits.RJ0){  // paddle should move up
             paddle2 = 2;
             T5CONbits.TMR5ON = 1;
             Delay10KTCYx(2);
@@ -399,6 +462,16 @@ void update_paddles(void) {
     }
 }
 
+//////////////////////////////////////////
+// Function: TMR1handler()
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function is part of a low priority 
+ * ISR and mostly just sets the value to 
+ * say that the ball is done waiting
+*/
+//////////////////////////////////////////
 void TMR1handler() {
     ball.done_waiting = 1;  // this means that the ball has completed its waiting cycle
     TMR1H = ball_high_byte;
@@ -409,6 +482,16 @@ void TMR1handler() {
     T0CONbits.TMR0ON = 0;
 }
 
+//////////////////////////////////////////
+// Function: TMR3handler()
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function is part of a low priority 
+ * ISR and mostly just sets the value to 
+ * say that player 1's paddle is done waiting
+*/
+//////////////////////////////////////////
 void TMR3handler(){
     // stop the timer
     T3CONbits.TMR3ON = 0;
@@ -437,6 +520,16 @@ void TMR3handler(){
     PIR2bits.TMR3IF = 0;
 }
 
+//////////////////////////////////////////
+// Function: TMR5handler()
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function is part of a low priority 
+ * ISR and mostly just sets the value to 
+ * say that player 2's paddle is done waiting
+*/
+//////////////////////////////////////////
 void TMR5handler(){
     // stop the timer
     T5CONbits.TMR5ON = 0;
@@ -465,6 +558,16 @@ void TMR5handler(){
     PIR5bits.TMR5IF = 0;
 }
 
+//////////////////////////////////////////
+// Function: print_paddle
+// Inputs: unsigned char player
+// Outputs: none
+// What does it do?
+/* This function goes through an turns on
+ * 16 pixels which define the current position
+ * of the paddle for the specified player
+*/
+//////////////////////////////////////////
 void print_paddle(unsigned char player){
     unsigned char input;
     unsigned char cursor;
@@ -527,14 +630,25 @@ void print_paddle(unsigned char player){
     }
 }
 
+//////////////////////////////////////////
+// Function: print_reflect
+// Inputs: unsigned char player, unsigned char pos
+// Outputs: none
+// What does it do?
+/* This function computes the new ball direction
+ * of travel based on the pixels which it hits
+ * on the paddle.  In short, every pixel is another
+ * 10 degrees
+*/
+//////////////////////////////////////////
 void paddle_reflect(unsigned char player, unsigned char pos){
     char answer;
     // first figure out the new angle
-    if ( pos < 8 ){
+    if ( pos < 8 ){  // top half of the paddle
         answer = -10*(7-pos);
         ball.theta = (float) answer;
     }
-    else if (pos > 7){
+    else if (pos > 7){  // bottom half of the paddle
         answer = 10*(pos - 8);
         ball.theta = (float) answer;
     }
@@ -547,6 +661,15 @@ void paddle_reflect(unsigned char player, unsigned char pos){
     }
 }
 
+//////////////////////////////////////////
+// Function: clear_paddle
+// Inputs: unsigned char player
+// Outputs: none
+// What does it do?
+/* This function clears the screen at the
+ * current position of the paddle
+*/
+//////////////////////////////////////////
 void clear_paddle(unsigned char player){
     if (player == 1){
         SetCursor(0, paddle1min / 8);
@@ -559,7 +682,7 @@ void clear_paddle(unsigned char player){
         WriteData(0);
         SetCursor(2, paddle1min / 8);
         WriteData(0);
-        SetCursor(2, paddle1max / 8);  // I don't know why but player 1 has an issue
+        SetCursor(2, paddle1max / 8);  // need to clear extra columns for player 1 to get rid of the weird pixels
         WriteData(0);
         SetCursor(3, paddle1min / 8);
         WriteData(0);
@@ -578,6 +701,16 @@ void clear_paddle(unsigned char player){
     }
 }
 
+//////////////////////////////////////////
+// Function: total_paddle_clear
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function clears the entire screen in
+ * the first two columns as well as the last
+ * two columns
+*/
+//////////////////////////////////////////
 void total_paddle_clear(void){
     unsigned char i;
     for (i = 0; i < 8; i++){
@@ -592,14 +725,25 @@ void total_paddle_clear(void){
     }
 }
 
+//////////////////////////////////////////
+// Function: check_reset
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function checks if either player has
+ * gotten to 5 points or if the reset button
+ * has been pressed.  Either way, it initiates
+ * the end game sequence
+*/
+//////////////////////////////////////////
 void check_reset(void){
-    if (player1_points == 5 || player2_points == 5){
+    if (player1_points == 5 || player2_points == 5){  // if the game has ended by score
         game = 0;
         end_game();
     }
     
     
-    if (PORTEbits.RE3){
+    if (PORTEbits.RE3){  // if the reset button has been pressed
         Delay10KTCYx(4);
         if (PORTEbits.RE3){
             Delay10KTCYx(36000);
@@ -612,6 +756,16 @@ void check_reset(void){
     }
 }
 
+//////////////////////////////////////////
+// Function: end_game
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function displays which player won
+ * as well as begins the next game so that
+ * it can begin anew.
+*/
+//////////////////////////////////////////
 void end_game(void){
     
     unsigned char i;
@@ -625,7 +779,7 @@ void end_game(void){
         /////////// P ///////////
         if (player1_points != player2_points){
         i = 41;
-
+        // if there is a definitive winner, print the winning player
         SetCursor(i,3);
         WriteData(0xFF);
 
@@ -948,6 +1102,14 @@ void end_game(void){
     
 }
 
+//////////////////////////////////////////
+// Function: begin_game
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function prints the BEGIN? message
+*/
+//////////////////////////////////////////
 void begin_game(void){
     unsigned char i;
     unsigned char k;
@@ -1214,6 +1376,16 @@ void begin_game(void){
     
 }
 
+//////////////////////////////////////////
+// Function: TMR0handler
+// Inputs: none
+// Outputs: none
+// What does it do?
+/* This function is ultimately useless, it
+ * was just put here for completeness and so 
+ * that the timer0 could not cause an interrupt
+*/
+//////////////////////////////////////////
 void TMR0handler(void){
    // just clear the flag and move on
     INTCONbits.TMR0IF = 0;

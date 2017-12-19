@@ -45,7 +45,7 @@ void main() {
      
      while(1){   // this is the loop for the game
          check_reset();
-         check_reset();
+         check_reset();  // needs the second call for desired output
          update_paddles();
          update_ball();
                   
@@ -73,10 +73,10 @@ void Initial() {
     TRISE = 0x00;
     LATE = 0x00;
     TRISEbits.TRISE3 = 1;    // start button 
-    TRISEbits.TRISE4 = 1;    // make the "up" button for player 1 set to input
-    TRISEbits.TRISE5 = 1;    // make the "down" button for player 1 set to input 
-    TRISJbits.TRISJ0 = 1;    // make the "up" button for player 2 set to input
-    TRISJbits.TRISJ1 = 1;    // make the "down" button for player 2 set to input
+    TRISEbits.TRISE4 = 1;    // make the down button for player 1 set to input
+    TRISEbits.TRISE5 = 1;    // make the up button for player 1 set to input 
+    TRISJbits.TRISJ0 = 1;    // make the down button for player 2 set to input
+    TRISJbits.TRISJ1 = 1;    // make the up button for player 2 set to input
     TRISFbits.TRISF4 = 1;    // make the start reset button set to input
     
     
